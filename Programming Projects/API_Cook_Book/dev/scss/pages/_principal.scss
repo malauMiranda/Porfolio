@@ -1,0 +1,36 @@
+@use './abstracts/variables';
+@use './abstracts/mixins';
+
+
+.align-nav-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.image-bg{
+    width: 100%;
+    background: url(../images/comida.jpg) no-repeat;
+    background-size: cover;
+    padding-top: 6rem;
+
+    padding-bottom: 12rem;
+    margin-bottom: 3rem;
+
+}
+
+.top-title{
+    @include mixins.set-font(variables.$ff, variables.$fw-bold, variables.$fs-lg, variables.$clr-white);
+}
+
+.subtitle{
+    @include mixins.set-font(variables.$ff, variables.$fw-SemiBold, variables.$fs-med, variables.$clr-gray);
+    text-align: center;
+}
+
+.btn-category{
+@include mixins.set-btn(variables.$clr-green, variables.$clr-red,variables.$clr-white,variables.$fs-reg );
+padding: 0.5rem;
+border-radius: .5rem;
+}

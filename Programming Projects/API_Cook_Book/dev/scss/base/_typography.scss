@@ -1,0 +1,28 @@
+@use './abstracts/variables';
+@use './abstracts/mixins';
+
+
+.title-login {
+    @include mixins.set-font(variables.$ff, variables.$fw-Regular, variables.$fs-xmed, variables.$clr-green);
+    margin-bottom: 4.5rem;
+    display: flex;
+    justify-content: start;
+
+}
+
+.sub-titles {
+    @include mixins.set-font(variables.$ff, variables.$fw-SemiBold, variables.$fs-med, variables.$clr-gray);
+}
+
+.green-sub-titles {
+    @include mixins.set-font(variables.$ff, variables.$fw-SemiBold, variables.$fs-med, variables.$clr-green);
+}
+
+.regular-text {
+    @include mixins.set-font(variables.$ff, variables.$fw-Regular, variables.$fs-reg, variables.$clr-text);
+}
+
+.recipe-title{
+    @include mixins.set-font(variables.$ff, variables.$fw-SemiBold, variables.$fs-xxmed, variables.$clr-gray);
+    text-align: center;
+}

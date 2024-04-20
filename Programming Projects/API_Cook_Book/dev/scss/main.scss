@@ -1,0 +1,19 @@
+@use'./vendor/bootstrap/bootstrap.scss';
+@use './abstracts/variables';
+@use './abstracts/mixins';
+@use './base/mediaQueries';
+@use './pages/login';
+@use './base/typography';
+@use './layout/footer';
+@use './layout/navbar';
+@use './pages/principal';
+@use './components/card';
+@use './pages/recetaInfo';
+@use './pages/perfil';
+@use './pages/admin';
+@use './pages/agregarReceta';
+@use './pages/listasAdmin';
+
+
+
+
