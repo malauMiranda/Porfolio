@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet">
+    <!--js bootstrap-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+    <!--css-->
+    <link rel="stylesheet" href="../dist/css/main.css">
+    <!--titulo pagina-->
+    <title>EcoWave</title>
+</head>
+
+<body>
+    <section id="app">
+        <!--header-->
+        <header>
+            <!--navbar-->
+            <Navbar></Navbar>
+        </header>
+
+        <!--banner-->
+        <section>
+            <banner titulo="¡Bienvenido a la comunidad EcoWave!"
+                descripcion="Somos una página para ayudarte a aprender sobre cómo ayudar al medio ambiente, por medio del reciclaje, la reutilización y la reducción"
+                imagen="./imgs/bannerBlog.png"></banner>
+        </section>
+
+        <!--feed-->
+        <section class="d-flex justify-content-center mt-5">
+            <div class=" card border border-0">
+                <div class="camps_container">
+                    <!--Añadir publicaciones-->
+                <div class="mb-5 ms-3 text-center">
+                    <h3 class="fw-bold">¿Deseas participar en el blog de la comunidad EcoWave?</h3>
+                    <p class="user-small">¡Si deseas compartir consejos o información sobre reciclar, reutilizar y/o reducir, publicalo para que las personas se enteren! </p>
+                    <a class="btn-post m-auto" href="./addblog.html">Añadir artículo</a>
+            </div>
+                    <div class="camp-title-div">
+                        <h4 class="section-camp-title fw-bold ms-3">Últimas Publicaciones</h4>
+                    </div>
+                    <div class="mt-5" v-for="(item, index) in posts">
+                        <card-blog :created_at="item.created_at" :title="item.title" :photo="item.photo"
+                            :description="item.description" :tamañoImagen="20" :id="item.id"></card-blog>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--footer-->
+        <footer>
+            <footer-nav></footer-nav>
+        </footer>
+    </section>
+
+    <!--Scripts-->
+    <!--bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous">
+        </script>
+    <!--Vuejs-->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!--js main-->
+    <script src="./js/main.js"></script>
+    <!--Axios-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!--components-->
+    <script src="./js/components/Navbar.js"></script>
+    <script src="./js/components/Footer.js"></script>
+    <script src="./js/components/banner.js"></script>
+    <script src="./js/components/CardBlog.js"></script>
+    <!--mounted app-->
+    <script>
+        const mountedApp = app.mount("#app");
+    </script>
+</body>
+
+</html>
